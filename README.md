@@ -104,19 +104,27 @@ c.Abort()
 Проект использует GitHub Actions и следующие security-инструменты:
 
 🧪 SAST — Gosec
+
 - name: Run Gosec Security Scanner
   uses: securego/gosec@master
   with:
   args: -fmt=html -out=gosec-report.html ./...
+  🔎 Go Vulnerability Scanner — govulncheck
+  bash
+  govulncheck -show=traces ./... > govulncheck-report.txt
 
-🔎 Go Vulnerability Scanner — govulncheck
-govulncheck -show=traces ./... > govulncheck-report.txt
+🧬 OWASP Dependency-Check (SCA)
 
-🧬 Snyk (SCA)
-snyk test --file=go.mod --package-manager=gomodules --json > snyk-report.json
+- name: Run OWASP Dependency Check
+  uses: dependency-check/Dependency-Check_Action@main
+  with:
+  project: 'go-project'
+  path: '.'
+  format: 'HTML'
 
 🔍 Quality — golangci-lint
-golangci-lint run ./...
+
+- golangci-lint run ./...
 
 📊 Отчёты CI/CD
 
