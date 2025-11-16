@@ -26,10 +26,10 @@ Invoke-RestMethod "http://localhost:8080/auth/login" -Method Post `
 
 2. 🔐 Защищённые эндпоинты (требуется JWT)
 
-GET /api/data
-$headers = @{ Authorization = "Bearer ваш_jwt_токен" }
+    GET /api/data
+    $headers = @{ Authorization = "Bearer ваш_jwt_токен" }
 
-Invoke-RestMethod "http://localhost:8080/api/data" -Headers $headers
+    Invoke-RestMethod "http://localhost:8080/api/data" -Headers $headers
 
 
 Ответ:
