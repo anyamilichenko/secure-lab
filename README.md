@@ -25,8 +25,9 @@ Invoke-RestMethod "http://localhost:8080/auth/login" -Method Post `
 }
 
 2. 🔐 Защищённые эндпоинты (требуется JWT)
-   GET /api/data
-   $headers = @{ Authorization = "Bearer ваш_jwt_токен" }
+
+GET /api/data
+$headers = @{ Authorization = "Bearer ваш_jwt_токен" }
 
 Invoke-RestMethod "http://localhost:8080/api/data" -Headers $headers
 
@@ -55,8 +56,9 @@ Invoke-RestMethod "http://localhost:8080/api/data" -Method Post `
 }
 
 3. 🌍 Публичные эндпоинты
-   GET /
-   Invoke-RestMethod "http://localhost:8080/" -Method Get
+
+GET /
+Invoke-RestMethod "http://localhost:8080/" -Method Get
 
 🛡 Меры защиты
 1. 🚫 SQL-инъекции
@@ -67,7 +69,8 @@ stmt, _ := db.Prepare("SELECT * FROM users WHERE username = ? AND password = ?")
 stmt.Query(username, hashedPassword)
 
 2. 🧼 Защита от XSS
-   escaped := html.EscapeString(request.Data)
+
+escaped := html.EscapeString(request.Data)
 
 
 Ввод:
