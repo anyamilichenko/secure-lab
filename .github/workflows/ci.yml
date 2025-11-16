@@ -1,9 +1,14 @@
-name: Security Scan
+name: CI/CD Pipeline with Security Scanning
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
-  test:
+  setup:
+    name: Setup Go Modules
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -12,32 +17,92 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.21'
+          go-version: 1.25
 
-      - name: Run tests
-        run: go test ./...
+      - name: Download dependencies
+        run: go mod download
 
-  sast:
+  test:
+    name: Run Tests
     runs-on: ubuntu-latest
+    needs: setup
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version: 1.25
+      - run: go test -v ./...
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version: 1.25
+      - run: go build -o myapp
+
+  security-scanning:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: 1.25
 
       - name: Run Gosec Security Scanner
         uses: securego/gosec@master
         with:
-          args: "./..."
+          args: -fmt=html -out=gosec-report.html ./...
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Go
-        uses: actions/setup-go@v4
+      - name: Upload Gosec Report
+        uses: actions/upload-artifact@v4
         with:
-          go-version: '1.21'
+          name: gosec-report
+          path: gosec-report.html
 
-      - name: Build
-        run: go build -v ./...
+      - name: Run govulncheck (detailed text report)
+        run: |
+          go install golang.org/x/vuln/cmd/govulncheck@latest
+          govulncheck -show=traces ./... > govulncheck-report.txt
+
+      - name: Upload govulncheck Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: govulncheck-report
+          path: govulncheck-report.txt
+
+      - name: Install Snyk CLI
+        run: |
+          npm install -g snyk
+          snyk --version
+
+      - name: Authenticate Snyk
+        run: snyk auth ${{ secrets.SNYK_TOKEN }}
+
+      - name: Run Snyk Dependency Scan
+        run: |
+          snyk test --file=go.mod --package-manager=gomodules --json > snyk-report.json || true
+
+      - name: Upload Snyk Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: snyk-report
+          path: snyk-report.json
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 1.25
+      - run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+      - run: golangci-lint run ./...
