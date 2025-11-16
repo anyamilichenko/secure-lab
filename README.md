@@ -120,7 +120,11 @@ golangci-lint run ./...
 
 📊 Отчёты CI/CD
 
-(будут добавлены позже)
+- [Pipeline Status](0_Pipeline%20Status.txt)
+- [Lint Report](1_Lint.txt)
+- [Security Scanning Report](2_Security%20Scanning.txt)
+- [Run Tests Report](3_Run%20Tests.txt)
+- [Build Report](4_Build.txt)
 
 🧪 Тестирование API
 # 1. Информация о API
