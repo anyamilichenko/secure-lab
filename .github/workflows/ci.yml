@@ -32,6 +32,7 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version: "1.25"
+          cache: true
 
       - name: Download dependencies
         run: go mod download
@@ -53,6 +54,7 @@ jobs:
       - name: Download dependencies
         run: go mod download
 
+      # Gosec Security Scanner
       - name: Run Gosec Security Scanner
         uses: securego/gosec@master
         with:
@@ -66,6 +68,7 @@ jobs:
           path: gosec-report.html
           if-no-files-found: ignore
 
+      # Go Vulnerability Scanner
       - name: Install govulncheck
         run: |
           go install golang.org/x/vuln/cmd/govulncheck@latest
@@ -84,31 +87,23 @@ jobs:
           path: govulncheck-report.txt
           if-no-files-found: ignore
 
-      - name: Setup Node.js for Snyk
-        uses: actions/setup-node@v4
+      # Альтернатива Snyk для Go проектов
+      - name: Run OWASP Dependency Check (альтернатива Snyk)
+        uses: dependency-check/Dependency-Check_Action@main
         with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install Snyk CLI
-        run: |
-          npm install -g snyk
-          snyk --version
-
-      - name: Authenticate Snyk
-        if: env.SNYK_TOKEN != ''
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
-
-      - name: Run Snyk Dependency Scan
-        run: |
-          snyk test --file=go.mod --package-manager=gomodules --json > snyk-report.json || echo "Snyk scan completed"
+          project: 'go-project'
+          path: '.'
+          format: 'HTML'
+          args: >
+            --scan . 
+            --enableRetired
         continue-on-error: true
 
-      - name: Upload Snyk Report
+      - name: Upload OWASP Report
         uses: actions/upload-artifact@v4
         with:
-          name: snyk-report
-          path: snyk-report.json
+          name: owasp-dependency-check-report
+          path: dependency-check-report.html
           if-no-files-found: ignore
 
   lint:
