@@ -1,0 +1,41 @@
+﻿2025-11-16T22:14:47.8717810Z Current runner version: '2.329.0'
+2025-11-16T22:14:47.8750823Z ##[group]Runner Image Provisioner
+2025-11-16T22:14:47.8752112Z Hosted Compute Agent
+2025-11-16T22:14:47.8752952Z Version: 20251016.436
+2025-11-16T22:14:47.8754040Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-16T22:14:47.8755217Z Build Date: 2025-10-15T20:44:12Z
+2025-11-16T22:14:47.8756203Z ##[endgroup]
+2025-11-16T22:14:47.8756965Z ##[group]Operating System
+2025-11-16T22:14:47.8757949Z Ubuntu
+2025-11-16T22:14:47.8758654Z 24.04.3
+2025-11-16T22:14:47.8759793Z LTS
+2025-11-16T22:14:47.8760712Z ##[endgroup]
+2025-11-16T22:14:47.8761529Z ##[group]Runner Image
+2025-11-16T22:14:47.8762649Z Image: ubuntu-24.04
+2025-11-16T22:14:47.8763500Z Version: 20251112.124.1
+2025-11-16T22:14:47.8765366Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-16T22:14:47.8768255Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-16T22:14:47.8770429Z ##[endgroup]
+2025-11-16T22:14:47.8772296Z ##[group]GITHUB_TOKEN Permissions
+2025-11-16T22:14:47.8774826Z Contents: read
+2025-11-16T22:14:47.8775859Z Metadata: read
+2025-11-16T22:14:47.8776759Z Packages: read
+2025-11-16T22:14:47.8777642Z ##[endgroup]
+2025-11-16T22:14:47.8781207Z Secret source: Actions
+2025-11-16T22:14:47.8782299Z Prepare workflow directory
+2025-11-16T22:14:47.9250176Z Prepare all required actions
+2025-11-16T22:14:47.9390008Z Complete job name: Pipeline Status
+2025-11-16T22:14:48.0343528Z ##[group]Run echo "✅ All CI/CD checks completed"
+2025-11-16T22:14:48.0344310Z [36;1mecho "✅ All CI/CD checks completed"[0m
+2025-11-16T22:14:48.0345064Z [36;1mecho "Test job: success"[0m
+2025-11-16T22:14:48.0345670Z [36;1mecho "Build job: success"[0m
+2025-11-16T22:14:48.0346279Z [36;1mecho "Security Scanning job: success"[0m
+2025-11-16T22:14:48.0347023Z [36;1mecho "Lint job: success"[0m
+2025-11-16T22:14:48.1630413Z shell: /usr/bin/bash -e {0}
+2025-11-16T22:14:48.1631349Z ##[endgroup]
+2025-11-16T22:14:48.1920851Z ✅ All CI/CD checks completed
+2025-11-16T22:14:48.1921493Z Test job: success
+2025-11-16T22:14:48.1921952Z Build job: success
+2025-11-16T22:14:48.1922559Z Security Scanning job: success
+2025-11-16T22:14:48.1923112Z Lint job: success
+2025-11-16T22:14:48.2021356Z Cleaning up orphan processes

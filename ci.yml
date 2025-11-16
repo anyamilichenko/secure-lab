@@ -87,7 +87,6 @@ jobs:
           path: govulncheck-report.txt
           if-no-files-found: ignore
 
-      # Альтернатива Snyk для Go проектов
       - name: Run OWASP Dependency Check (альтернатива Snyk)
         uses: dependency-check/Dependency-Check_Action@main
         with:
@@ -135,7 +134,7 @@ jobs:
     steps:
       - name: Check Pipeline Status
         run: |
-          echo "✅ All CI/CD checks completed"
+          echo "All CI/CD checks completed"
           echo "Test job: ${{ needs.test.result }}"
           echo "Build job: ${{ needs.build.result }}"
           echo "Security Scanning job: ${{ needs.security-scanning.result }}"

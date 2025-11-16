@@ -1,0 +1,387 @@
+﻿2025-11-16T22:13:02.9217702Z Current runner version: '2.329.0'
+2025-11-16T22:13:02.9241997Z ##[group]Runner Image Provisioner
+2025-11-16T22:13:02.9242874Z Hosted Compute Agent
+2025-11-16T22:13:02.9243451Z Version: 20251016.436
+2025-11-16T22:13:02.9244083Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-16T22:13:02.9244751Z Build Date: 2025-10-15T20:44:12Z
+2025-11-16T22:13:02.9245676Z ##[endgroup]
+2025-11-16T22:13:02.9246289Z ##[group]Operating System
+2025-11-16T22:13:02.9246860Z Ubuntu
+2025-11-16T22:13:02.9247291Z 24.04.3
+2025-11-16T22:13:02.9247833Z LTS
+2025-11-16T22:13:02.9248261Z ##[endgroup]
+2025-11-16T22:13:02.9248747Z ##[group]Runner Image
+2025-11-16T22:13:02.9249384Z Image: ubuntu-24.04
+2025-11-16T22:13:02.9249860Z Version: 20251112.124.1
+2025-11-16T22:13:02.9250866Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-16T22:13:02.9252467Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-16T22:13:02.9253413Z ##[endgroup]
+2025-11-16T22:13:02.9254584Z ##[group]GITHUB_TOKEN Permissions
+2025-11-16T22:13:02.9256645Z Contents: read
+2025-11-16T22:13:02.9257305Z Metadata: read
+2025-11-16T22:13:02.9257790Z Packages: read
+2025-11-16T22:13:02.9258290Z ##[endgroup]
+2025-11-16T22:13:02.9260404Z Secret source: Actions
+2025-11-16T22:13:02.9261169Z Prepare workflow directory
+2025-11-16T22:13:02.9654573Z Prepare all required actions
+2025-11-16T22:13:02.9713330Z Getting action download info
+2025-11-16T22:13:03.3947537Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-11-16T22:13:03.4946766Z Download action repository 'actions/setup-go@v4' (SHA:19bb51245e9c80abacb2e91cc42b33fa478b8639)
+2025-11-16T22:13:04.1566149Z Complete job name: Lint
+2025-11-16T22:13:04.2254510Z ##[group]Run actions/checkout@v4
+2025-11-16T22:13:04.2255620Z with:
+2025-11-16T22:13:04.2256067Z   repository: anyamilichenko/secure-lab
+2025-11-16T22:13:04.2256875Z   token: ***
+2025-11-16T22:13:04.2257297Z   ssh-strict: true
+2025-11-16T22:13:04.2257705Z   ssh-user: git
+2025-11-16T22:13:04.2258113Z   persist-credentials: true
+2025-11-16T22:13:04.2258575Z   clean: true
+2025-11-16T22:13:04.2258988Z   sparse-checkout-cone-mode: true
+2025-11-16T22:13:04.2259483Z   fetch-depth: 1
+2025-11-16T22:13:04.2259875Z   fetch-tags: false
+2025-11-16T22:13:04.2260283Z   show-progress: true
+2025-11-16T22:13:04.2260687Z   lfs: false
+2025-11-16T22:13:04.2261064Z   submodules: false
+2025-11-16T22:13:04.2261476Z   set-safe-directory: true
+2025-11-16T22:13:04.2262163Z ##[endgroup]
+2025-11-16T22:13:04.3351225Z Syncing repository: anyamilichenko/secure-lab
+2025-11-16T22:13:04.3353238Z ##[group]Getting Git version info
+2025-11-16T22:13:04.3354039Z Working directory is '/home/runner/work/secure-lab/secure-lab'
+2025-11-16T22:13:04.3355330Z [command]/usr/bin/git version
+2025-11-16T22:13:04.3429942Z git version 2.51.2
+2025-11-16T22:13:04.3457472Z ##[endgroup]
+2025-11-16T22:13:04.3472283Z Temporarily overriding HOME='/home/runner/work/_temp/3bdc0f62-e96f-4af9-8c5d-2985be1b2dcd' before making global git config changes
+2025-11-16T22:13:04.3474416Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-16T22:13:04.3485908Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secure-lab/secure-lab
+2025-11-16T22:13:04.3524976Z Deleting the contents of '/home/runner/work/secure-lab/secure-lab'
+2025-11-16T22:13:04.3528993Z ##[group]Initializing the repository
+2025-11-16T22:13:04.3532963Z [command]/usr/bin/git init /home/runner/work/secure-lab/secure-lab
+2025-11-16T22:13:04.3643259Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-16T22:13:04.3644961Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-16T22:13:04.3646666Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-16T22:13:04.3647747Z hint:
+2025-11-16T22:13:04.3648496Z hint: 	git config --global init.defaultBranch <name>
+2025-11-16T22:13:04.3649745Z hint:
+2025-11-16T22:13:04.3650646Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-16T22:13:04.3651542Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-16T22:13:04.3652239Z hint:
+2025-11-16T22:13:04.3652621Z hint: 	git branch -m <name>
+2025-11-16T22:13:04.3653070Z hint:
+2025-11-16T22:13:04.3653806Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-16T22:13:04.3654956Z Initialized empty Git repository in /home/runner/work/secure-lab/secure-lab/.git/
+2025-11-16T22:13:04.3660690Z [command]/usr/bin/git remote add origin https://github.com/anyamilichenko/secure-lab
+2025-11-16T22:13:04.3698740Z ##[endgroup]
+2025-11-16T22:13:04.3699970Z ##[group]Disabling automatic garbage collection
+2025-11-16T22:13:04.3703949Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-16T22:13:04.3734219Z ##[endgroup]
+2025-11-16T22:13:04.3735767Z ##[group]Setting up auth
+2025-11-16T22:13:04.3742380Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-16T22:13:04.3774659Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-16T22:13:04.4100806Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-16T22:13:04.4132836Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-16T22:13:04.4364346Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-16T22:13:04.4407272Z ##[endgroup]
+2025-11-16T22:13:04.4408547Z ##[group]Fetching the repository
+2025-11-16T22:13:04.4417214Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5da5971ac4bd535a618c6146f553f25ac2e5d1a5:refs/remotes/origin/master
+2025-11-16T22:13:04.7856775Z From https://github.com/anyamilichenko/secure-lab
+2025-11-16T22:13:04.7897730Z  * [new ref]         5da5971ac4bd535a618c6146f553f25ac2e5d1a5 -> origin/master
+2025-11-16T22:13:04.7900424Z ##[endgroup]
+2025-11-16T22:13:04.7901470Z ##[group]Determining the checkout info
+2025-11-16T22:13:04.7902483Z ##[endgroup]
+2025-11-16T22:13:04.7905874Z [command]/usr/bin/git sparse-checkout disable
+2025-11-16T22:13:04.7948582Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-16T22:13:04.7981774Z ##[group]Checking out the ref
+2025-11-16T22:13:04.7986771Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-11-16T22:13:04.8043425Z Reset branch 'master'
+2025-11-16T22:13:04.8045776Z branch 'master' set up to track 'origin/master'.
+2025-11-16T22:13:04.8051827Z ##[endgroup]
+2025-11-16T22:13:04.8088838Z [command]/usr/bin/git log -1 --format=%H
+2025-11-16T22:13:04.8111382Z 5da5971ac4bd535a618c6146f553f25ac2e5d1a5
+2025-11-16T22:13:04.8373448Z ##[group]Run actions/setup-go@v4
+2025-11-16T22:13:04.8374232Z with:
+2025-11-16T22:13:04.8374735Z   go-version: 1.25
+2025-11-16T22:13:04.8375525Z   cache: true
+2025-11-16T22:13:04.8376065Z   check-latest: false
+2025-11-16T22:13:04.8376843Z   token: ***
+2025-11-16T22:13:04.8377371Z ##[endgroup]
+2025-11-16T22:13:05.0146671Z Setup go version spec 1.25
+2025-11-16T22:13:05.0980506Z Found in cache @ /opt/hostedtoolcache/go/1.25.4/x64
+2025-11-16T22:13:05.0985675Z Added go to the path
+2025-11-16T22:13:05.0989422Z Successfully set up Go version 1.25
+2025-11-16T22:13:06.2975576Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOMODCACHE
+2025-11-16T22:13:06.3006433Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOCACHE
+2025-11-16T22:13:06.3030834Z /home/runner/go/pkg/mod
+2025-11-16T22:13:06.3061719Z /home/runner/.cache/go-build
+2025-11-16T22:13:06.5786006Z Cache hit for: setup-go-Linux-ubuntu24-go-1.25.4-f29ddaca9537bce9aec78f57870d454f50be8129b3a8065be40c9628befd3878
+2025-11-16T22:13:07.8781453Z Received 4194304 of 66408527 (6.3%), 4.0 MBs/sec
+2025-11-16T22:13:08.3307363Z Received 66408527 of 66408527 (100.0%), 43.6 MBs/sec
+2025-11-16T22:13:08.3309351Z Cache Size: ~63 MB (66408527 B)
+2025-11-16T22:13:08.3347370Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ea6daad2-c96a-4e0b-9708-f1f76b9f5759/cache.tzst -P -C /home/runner/work/secure-lab/secure-lab --use-compress-program unzstd
+2025-11-16T22:13:09.0593010Z Cache restored successfully
+2025-11-16T22:13:09.0725283Z Cache restored from key: setup-go-Linux-ubuntu24-go-1.25.4-f29ddaca9537bce9aec78f57870d454f50be8129b3a8065be40c9628befd3878
+2025-11-16T22:13:09.0754739Z go version go1.25.4 linux/amd64
+2025-11-16T22:13:09.0754975Z 
+2025-11-16T22:13:09.0755545Z ##[group]go env
+2025-11-16T22:13:09.1922050Z AR='ar'
+2025-11-16T22:13:09.1922501Z CC='gcc'
+2025-11-16T22:13:09.1922767Z CGO_CFLAGS='-O2 -g'
+2025-11-16T22:13:09.1923030Z CGO_CPPFLAGS=''
+2025-11-16T22:13:09.1923376Z CGO_CXXFLAGS='-O2 -g'
+2025-11-16T22:13:09.1923626Z CGO_ENABLED='1'
+2025-11-16T22:13:09.1923832Z CGO_FFLAGS='-O2 -g'
+2025-11-16T22:13:09.1924038Z CGO_LDFLAGS='-O2 -g'
+2025-11-16T22:13:09.1924233Z CXX='g++'
+2025-11-16T22:13:09.1924414Z GCCGO='gccgo'
+2025-11-16T22:13:09.1924615Z GO111MODULE=''
+2025-11-16T22:13:09.1924796Z GOAMD64='v1'
+2025-11-16T22:13:09.1924990Z GOARCH='amd64'
+2025-11-16T22:13:09.1925371Z GOAUTH='netrc'
+2025-11-16T22:13:09.1925551Z GOBIN=''
+2025-11-16T22:13:09.1925759Z GOCACHE='/home/runner/.cache/go-build'
+2025-11-16T22:13:09.1926137Z GOCACHEPROG=''
+2025-11-16T22:13:09.1926366Z GODEBUG=''
+2025-11-16T22:13:09.1926581Z GOENV='/home/runner/.config/go/env'
+2025-11-16T22:13:09.1926816Z GOEXE=''
+2025-11-16T22:13:09.1927227Z GOEXPERIMENT=''
+2025-11-16T22:13:09.1927535Z GOFIPS140='off'
+2025-11-16T22:13:09.1927751Z GOFLAGS=''
+2025-11-16T22:13:09.1928391Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2932450093=/tmp/go-build -gno-record-gcc-switches'
+2025-11-16T22:13:09.1929014Z GOHOSTARCH='amd64'
+2025-11-16T22:13:09.1929224Z GOHOSTOS='linux'
+2025-11-16T22:13:09.1929412Z GOINSECURE=''
+2025-11-16T22:13:09.1929653Z GOMOD='/home/runner/work/secure-lab/secure-lab/go.mod'
+2025-11-16T22:13:09.1929963Z GOMODCACHE='/home/runner/go/pkg/mod'
+2025-11-16T22:13:09.1930211Z GONOPROXY=''
+2025-11-16T22:13:09.1930392Z GONOSUMDB=''
+2025-11-16T22:13:09.1930572Z GOOS='linux'
+2025-11-16T22:13:09.1930771Z GOPATH='/home/runner/go'
+2025-11-16T22:13:09.1930981Z GOPRIVATE=''
+2025-11-16T22:13:09.1931422Z GOPROXY='https://proxy.golang.org,direct'
+2025-11-16T22:13:09.1931741Z GOROOT='/opt/hostedtoolcache/go/1.25.4/x64'
+2025-11-16T22:13:09.1932015Z GOSUMDB='sum.golang.org'
+2025-11-16T22:13:09.1932240Z GOTELEMETRY='local'
+2025-11-16T22:13:09.1932495Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2025-11-16T22:13:09.1932773Z GOTMPDIR=''
+2025-11-16T22:13:09.1932957Z GOTOOLCHAIN='auto'
+2025-11-16T22:13:09.1933264Z GOTOOLDIR='/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64'
+2025-11-16T22:13:09.1933631Z GOVCS=''
+2025-11-16T22:13:09.1934159Z GOVERSION='go1.25.4'
+2025-11-16T22:13:09.1934381Z GOWORK=''
+2025-11-16T22:13:09.1934570Z PKG_CONFIG='pkg-config'
+2025-11-16T22:13:09.1934734Z 
+2025-11-16T22:13:09.1935020Z ##[endgroup]
+2025-11-16T22:13:09.2069745Z ##[group]Run go mod download
+2025-11-16T22:13:09.2070088Z [36;1mgo mod download[0m
+2025-11-16T22:13:09.2108655Z shell: /usr/bin/bash -e {0}
+2025-11-16T22:13:09.2108931Z ##[endgroup]
+2025-11-16T22:13:09.2410693Z ##[group]Run go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+2025-11-16T22:13:09.2411293Z [36;1mgo install github.com/golangci/golangci-lint/cmd/golangci-lint@latest[0m
+2025-11-16T22:13:09.2444143Z shell: /usr/bin/bash -e {0}
+2025-11-16T22:13:09.2444408Z ##[endgroup]
+2025-11-16T22:13:09.4954354Z go: downloading github.com/golangci/golangci-lint v1.64.8
+2025-11-16T22:13:09.9832594Z go: downloading github.com/fatih/color v1.18.0
+2025-11-16T22:13:09.9833263Z go: downloading github.com/gofrs/flock v0.12.1
+2025-11-16T22:13:10.0207926Z go: downloading github.com/hashicorp/go-version v1.7.0
+2025-11-16T22:13:10.0337094Z go: downloading github.com/pelletier/go-toml/v2 v2.2.3
+2025-11-16T22:13:10.0688537Z go: downloading github.com/santhosh-tekuri/jsonschema/v6 v6.0.1
+2025-11-16T22:13:10.1017980Z go: downloading github.com/spf13/cobra v1.9.1
+2025-11-16T22:13:10.1032142Z go: downloading github.com/pelletier/go-toml v1.9.5
+2025-11-16T22:13:10.1115934Z go: downloading github.com/spf13/pflag v1.0.6
+2025-11-16T22:13:10.1437958Z go: downloading github.com/spf13/viper v1.12.0
+2025-11-16T22:13:10.1501388Z go: downloading go.uber.org/automaxprocs v1.6.0
+2025-11-16T22:13:10.1555584Z go: downloading gopkg.in/yaml.v3 v3.0.1
+2025-11-16T22:13:11.0235493Z go: downloading github.com/mattn/go-colorable v0.1.14
+2025-11-16T22:13:11.0944540Z go: downloading golang.org/x/tools v0.31.0
+2025-11-16T22:13:11.1532763Z go: downloading github.com/go-viper/mapstructure/v2 v2.2.1
+2025-11-16T22:13:11.1739695Z go: downloading github.com/ldez/grignotin v0.9.0
+2025-11-16T22:13:11.3143611Z go: downloading github.com/mitchellh/go-homedir v1.1.0
+2025-11-16T22:13:11.3144734Z go: downloading golang.org/x/mod v0.24.0
+2025-11-16T22:13:11.4551865Z go: downloading github.com/golangci/plugin-module-register v0.1.1
+2025-11-16T22:13:11.4809233Z go: downloading github.com/sirupsen/logrus v1.9.3
+2025-11-16T22:13:11.5054840Z go: downloading github.com/stretchr/testify v1.10.0
+2025-11-16T22:13:11.5275326Z go: downloading github.com/go-xmlfmt/xmlfmt v1.1.3
+2025-11-16T22:13:11.5794042Z go: downloading github.com/golangci/revgrep v0.8.0
+2025-11-16T22:13:11.6098995Z go: downloading golang.org/x/sys v0.31.0
+2025-11-16T22:13:11.6940135Z go: downloading golang.org/x/text v0.22.0
+2025-11-16T22:13:12.2426055Z go: downloading github.com/fsnotify/fsnotify v1.5.4
+2025-11-16T22:13:12.2675952Z go: downloading github.com/mitchellh/mapstructure v1.5.0
+2025-11-16T22:13:12.2753189Z go: downloading github.com/spf13/afero v1.12.0
+2025-11-16T22:13:12.2753956Z go: downloading github.com/spf13/cast v1.5.0
+2025-11-16T22:13:12.2864480Z go: downloading github.com/spf13/jwalterweatherman v1.1.0
+2025-11-16T22:13:12.8648876Z go: downloading github.com/rogpeppe/go-internal v1.14.1
+2025-11-16T22:13:12.9777875Z go: downloading github.com/alingse/asasalint v0.0.11
+2025-11-16T22:13:12.9938551Z go: downloading github.com/tdakkota/asciicheck v0.4.1
+2025-11-16T22:13:13.0010051Z go: downloading github.com/breml/bidichk v0.3.2
+2025-11-16T22:13:13.0166723Z go: downloading github.com/timakin/bodyclose v0.0.0-20241017074812-ed6a65f985e3
+2025-11-16T22:13:13.0358774Z go: downloading github.com/lasiar/canonicalheader v1.1.2
+2025-11-16T22:13:13.0449596Z go: downloading github.com/sivchari/containedctx v1.0.3
+2025-11-16T22:13:13.0576871Z go: downloading github.com/kkHAIKE/contextcheck v1.1.6
+2025-11-16T22:13:13.0629032Z go: downloading github.com/karamaru-alpha/copyloopvar v1.2.1
+2025-11-16T22:13:13.0822685Z go: downloading github.com/bkielbasa/cyclop v1.2.3
+2025-11-16T22:13:13.0843475Z go: downloading gitlab.com/bosi/decorder v0.4.2
+2025-11-16T22:13:13.1032626Z go: downloading github.com/OpenPeeDeeP/depguard/v2 v2.2.1
+2025-11-16T22:13:13.1036831Z go: downloading github.com/golangci/dupl v0.0.0-20250308024227-f665c8d69b32
+2025-11-16T22:13:13.1219343Z go: downloading github.com/Abirdcfly/dupword v0.1.3
+2025-11-16T22:13:13.1252740Z go: downloading github.com/charithe/durationcheck v0.0.10
+2025-11-16T22:13:13.1410107Z go: downloading github.com/Djarvur/go-err113 v0.0.0-20210108212216-aea10b59be24
+2025-11-16T22:13:13.1473415Z go: downloading github.com/kisielk/errcheck v1.9.0
+2025-11-16T22:13:13.1755617Z go: downloading github.com/breml/errchkjson v0.4.0
+2025-11-16T22:13:13.1944948Z go: downloading github.com/Antonboom/errname v1.0.0
+2025-11-16T22:13:13.2376666Z go: downloading github.com/polyfloyd/go-errorlint v1.7.1
+2025-11-16T22:13:13.2377434Z go: downloading github.com/nishanths/exhaustive v0.12.0
+2025-11-16T22:13:13.2603581Z go: downloading github.com/GaijinEntertainment/go-exhaustruct/v3 v3.3.1
+2025-11-16T22:13:13.2671738Z go: downloading github.com/ldez/exptostd v0.4.2
+2025-11-16T22:13:13.2752904Z go: downloading github.com/Crocmagnon/fatcontext v0.7.1
+2025-11-16T22:13:13.2799126Z go: downloading github.com/ashanbrown/forbidigo v1.6.0
+2025-11-16T22:13:13.2857895Z go: downloading github.com/gostaticanalysis/forcetypeassert v0.2.0
+2025-11-16T22:13:13.2946173Z go: downloading github.com/ultraware/funlen v0.2.0
+2025-11-16T22:13:13.3033473Z go: downloading github.com/nunnatsa/ginkgolinter v0.19.1
+2025-11-16T22:13:13.3327299Z go: downloading 4d63.com/gocheckcompilerdirectives v1.3.0
+2025-11-16T22:13:13.3434220Z go: downloading 4d63.com/gochecknoglobals v0.2.2
+2025-11-16T22:13:13.3434951Z go: downloading github.com/alecthomas/go-check-sumtype v0.3.1
+2025-11-16T22:13:13.3511084Z go: downloading github.com/uudashr/gocognit v1.2.0
+2025-11-16T22:13:13.3719906Z go: downloading github.com/jgautheron/goconst v1.7.1
+2025-11-16T22:13:13.3721663Z go: downloading github.com/go-critic/go-critic v0.12.0
+2025-11-16T22:13:13.3888722Z go: downloading github.com/quasilyte/go-ruleguard/dsl v0.3.22
+2025-11-16T22:13:13.4044210Z go: downloading github.com/quasilyte/go-ruleguard v0.4.3-0.20240823090925-0fe6f58b47b1
+2025-11-16T22:13:13.4557204Z go: downloading github.com/fzipp/gocyclo v0.6.0
+2025-11-16T22:13:13.4559333Z go: downloading github.com/tetafro/godot v1.5.0
+2025-11-16T22:13:13.4683026Z go: downloading github.com/matoous/godox v1.1.0
+2025-11-16T22:13:13.4788842Z go: downloading github.com/denis-tingaikin/go-header v0.5.0
+2025-11-16T22:13:13.4811188Z go: downloading github.com/ldez/gomoddirectives v0.6.1
+2025-11-16T22:13:13.4882080Z go: downloading github.com/ryancurrah/gomodguard v1.3.5
+2025-11-16T22:13:13.4982460Z go: downloading github.com/golangci/go-printf-func-name v0.1.0
+2025-11-16T22:13:13.5053956Z go: downloading github.com/securego/gosec/v2 v2.22.2
+2025-11-16T22:13:13.5708698Z go: downloading honnef.co/go/tools v0.6.1
+2025-11-16T22:13:13.5709393Z go: downloading github.com/xen0n/gosmopolitan v1.2.2
+2025-11-16T22:13:13.5713580Z go: downloading github.com/leonklingele/grouper v1.1.2
+2025-11-16T22:13:13.5949121Z go: downloading github.com/uudashr/iface v1.3.1
+2025-11-16T22:13:13.6351156Z go: downloading github.com/julz/importas v0.2.0
+2025-11-16T22:13:13.6352242Z go: downloading github.com/macabu/inamedparam v0.1.3
+2025-11-16T22:13:13.6631981Z go: downloading github.com/gordonklaus/ineffassign v0.1.0
+2025-11-16T22:13:13.6655344Z go: downloading github.com/sashamelentyev/interfacebloat v1.1.0
+2025-11-16T22:13:13.6809315Z go: downloading github.com/ckaznocha/intrange v0.3.0
+2025-11-16T22:13:13.6839421Z go: downloading github.com/butuzov/ireturn v0.3.1
+2025-11-16T22:13:13.6977143Z go: downloading github.com/timonwong/loggercheck v0.10.1
+2025-11-16T22:13:13.6986401Z go: downloading github.com/yagipy/maintidx v1.0.0
+2025-11-16T22:13:13.7106741Z go: downloading github.com/ashanbrown/makezero v1.2.0
+2025-11-16T22:13:13.7459760Z go: downloading github.com/butuzov/mirror v1.3.0
+2025-11-16T22:13:13.7465742Z go: downloading github.com/golangci/misspell v0.6.0
+2025-11-16T22:13:13.7692256Z go: downloading github.com/tommy-muehle/go-mnd/v2 v2.5.1
+2025-11-16T22:13:13.7727536Z go: downloading go-simpler.org/musttag v0.13.0
+2025-11-16T22:13:13.7896442Z go: downloading github.com/alexkohler/nakedret/v2 v2.0.5
+2025-11-16T22:13:13.7900852Z go: downloading github.com/nakabonne/nestif v0.3.1
+2025-11-16T22:13:13.8109764Z go: downloading github.com/gostaticanalysis/nilerr v0.1.1
+2025-11-16T22:13:13.8114578Z go: downloading github.com/alingse/nilnesserr v0.1.2
+2025-11-16T22:13:13.8344076Z go: downloading github.com/Antonboom/nilnil v1.0.1
+2025-11-16T22:13:13.8432977Z go: downloading github.com/ssgreg/nlreturn/v2 v2.2.1
+2025-11-16T22:13:13.8434870Z go: downloading github.com/sonatard/noctx v0.1.0
+2025-11-16T22:13:13.8453463Z go: downloading github.com/firefart/nonamedreturns v1.0.5
+2025-11-16T22:13:13.8595829Z go: downloading github.com/stbenjam/no-sprintf-host-port v0.2.0
+2025-11-16T22:13:13.8625689Z go: downloading github.com/kunwardeep/paralleltest v1.0.10
+2025-11-16T22:13:13.8633312Z go: downloading github.com/catenacyber/perfsprint v0.8.2
+2025-11-16T22:13:13.8657233Z go: downloading github.com/alexkohler/prealloc v1.0.0
+2025-11-16T22:13:13.8839642Z go: downloading github.com/nishanths/predeclared v0.2.2
+2025-11-16T22:13:13.8950746Z go: downloading github.com/yeya24/promlinter v0.3.0
+2025-11-16T22:13:13.9055470Z go: downloading github.com/ghostiam/protogetter v0.3.9
+2025-11-16T22:13:13.9100766Z go: downloading github.com/curioswitch/go-reassign v0.3.0
+2025-11-16T22:13:13.9220441Z go: downloading github.com/raeperd/recvcheck v0.2.0
+2025-11-16T22:13:13.9343791Z go: downloading github.com/BurntSushi/toml v1.4.1-0.20240526193622-a339e1f7089c
+2025-11-16T22:13:13.9398727Z go: downloading github.com/mgechev/revive v1.7.0
+2025-11-16T22:13:14.0489397Z go: downloading github.com/jingyugao/rowserrcheck v1.1.1
+2025-11-16T22:13:14.0492214Z go: downloading go-simpler.org/sloglint v0.9.0
+2025-11-16T22:13:14.0494614Z go: downloading github.com/jjti/go-spancheck v0.6.4
+2025-11-16T22:13:14.0496781Z go: downloading github.com/ryanrolds/sqlclosecheck v0.5.1
+2025-11-16T22:13:14.1210532Z go: downloading github.com/4meepo/tagalign v1.4.2
+2025-11-16T22:13:14.1212284Z go: downloading github.com/ldez/tagliatelle v0.7.1
+2025-11-16T22:13:14.1228627Z go: downloading github.com/sivchari/tenv v1.12.1
+2025-11-16T22:13:14.1478635Z go: downloading github.com/maratori/testableexamples v1.0.0
+2025-11-16T22:13:14.1486033Z go: downloading github.com/Antonboom/testifylint v1.5.2
+2025-11-16T22:13:14.1536635Z go: downloading github.com/maratori/testpackage v1.1.1
+2025-11-16T22:13:14.1667354Z go: downloading github.com/kulti/thelper v0.6.3
+2025-11-16T22:13:14.1729546Z go: downloading github.com/moricho/tparallel v0.3.2
+2025-11-16T22:13:14.1862411Z go: downloading github.com/golangci/unconvert v0.0.0-20240309020433-c5143eacb3ed
+2025-11-16T22:13:14.1922188Z go: downloading mvdan.cc/unparam v0.0.0-20240528143540-8a5130ca722f
+2025-11-16T22:13:14.1935999Z go: downloading github.com/sashamelentyev/usestdlibvars v1.28.0
+2025-11-16T22:13:14.2036055Z go: downloading github.com/ldez/usetesting v0.4.2
+2025-11-16T22:13:14.2086519Z go: downloading github.com/blizzy78/varnamelen v0.8.0
+2025-11-16T22:13:14.2210287Z go: downloading github.com/sanposhiho/wastedassign/v2 v2.1.0
+2025-11-16T22:13:14.2311416Z go: downloading github.com/ultraware/whitespace v0.2.0
+2025-11-16T22:13:14.2383567Z go: downloading github.com/tomarrell/wrapcheck/v2 v2.10.0
+2025-11-16T22:13:14.2438587Z go: downloading github.com/bombsimon/wsl/v4 v4.5.0
+2025-11-16T22:13:14.2508639Z go: downloading github.com/ykadowak/zerologlint v0.1.5
+2025-11-16T22:13:14.2523952Z go: downloading golang.org/x/sync v0.12.0
+2025-11-16T22:13:14.2690438Z go: downloading github.com/davecgh/go-spew v1.1.1
+2025-11-16T22:13:14.2698539Z go: downloading github.com/pmezard/go-difflib v1.0.0
+2025-11-16T22:13:14.2700423Z go: downloading github.com/stretchr/objx v0.5.2
+2025-11-16T22:13:14.2870533Z go: downloading github.com/daixiang0/gci v0.13.5
+2025-11-16T22:13:14.3076406Z go: downloading github.com/golangci/gofmt v0.0.0-20250106114630-d62b90e6713d
+2025-11-16T22:13:14.3220015Z go: downloading mvdan.cc/gofumpt v0.7.0
+2025-11-16T22:13:14.3786992Z go: downloading github.com/subosito/gotenv v1.4.1
+2025-11-16T22:13:14.3790274Z go: downloading github.com/hashicorp/hcl v1.0.0
+2025-11-16T22:13:14.3989600Z go: downloading gopkg.in/ini.v1 v1.67.0
+2025-11-16T22:13:14.4013302Z go: downloading github.com/magiconair/properties v1.8.6
+2025-11-16T22:13:14.6936608Z go: downloading github.com/sourcegraph/go-diff v0.7.0
+2025-11-16T22:13:14.6948962Z go: downloading github.com/gostaticanalysis/analysisutil v0.7.1
+2025-11-16T22:13:14.7188627Z go: downloading github.com/go-toolsmith/astcast v1.1.0
+2025-11-16T22:13:14.7232806Z go: downloading github.com/gobwas/glob v0.2.3
+2025-11-16T22:13:14.7352607Z go: downloading github.com/google/go-cmp v0.7.0
+2025-11-16T22:13:14.7467683Z go: downloading gopkg.in/yaml.v2 v2.4.0
+2025-11-16T22:13:14.7486735Z go: downloading github.com/go-toolsmith/astfmt v1.1.0
+2025-11-16T22:13:14.7650619Z go: downloading github.com/go-toolsmith/astcopy v1.1.0
+2025-11-16T22:13:14.7722794Z go: downloading github.com/go-toolsmith/astequal v1.2.0
+2025-11-16T22:13:14.7738780Z go: downloading github.com/go-toolsmith/astp v1.1.0
+2025-11-16T22:13:14.7845801Z go: downloading github.com/go-toolsmith/strparse v1.1.0
+2025-11-16T22:13:14.7871733Z go: downloading github.com/go-toolsmith/typep v1.1.0
+2025-11-16T22:13:14.8112524Z go: downloading github.com/quasilyte/regex/syntax v0.0.0-20210819130434-b3f0c404a727
+2025-11-16T22:13:14.8227696Z go: downloading github.com/Masterminds/semver/v3 v3.3.0
+2025-11-16T22:13:14.8364991Z go: downloading github.com/ccojocar/zxcvbn-go v1.0.2
+2025-11-16T22:13:14.8388378Z go: downloading github.com/gostaticanalysis/comment v1.5.0
+2025-11-16T22:13:14.8715449Z go: downloading github.com/prometheus/client_golang v1.12.1
+2025-11-16T22:13:14.8802311Z go: downloading github.com/prometheus/client_model v0.2.0
+2025-11-16T22:13:14.8982063Z go: downloading github.com/fatih/structtag v1.2.0
+2025-11-16T22:13:14.9192705Z go: downloading github.com/ettle/strcase v0.2.0
+2025-11-16T22:13:14.9197420Z go: downloading github.com/hashicorp/go-immutable-radix/v2 v2.1.0
+2025-11-16T22:13:14.9258362Z go: downloading github.com/hexops/gotextdiff v1.0.3
+2025-11-16T22:13:14.9473724Z go: downloading go.uber.org/zap v1.24.0
+2025-11-16T22:13:15.0693581Z go: downloading golang.org/x/exp/typeparams v0.0.0-20250210185358-939b2ce775ac
+2025-11-16T22:13:15.0703598Z go: downloading github.com/quasilyte/gogrep v0.5.0
+2025-11-16T22:13:15.1069931Z go: downloading golang.org/x/exp v0.0.0-20240909161429-701f63a606c0
+2025-11-16T22:13:15.1117983Z go: downloading github.com/quasilyte/stdinfo v0.0.0-20220114132959-f7386bf02567
+2025-11-16T22:13:15.1120287Z go: downloading github.com/golang/protobuf v1.5.3
+2025-11-16T22:13:15.1454263Z go: downloading github.com/chavacava/garif v0.1.0
+2025-11-16T22:13:15.1631434Z go: downloading github.com/olekukonko/tablewriter v0.0.5
+2025-11-16T22:13:15.1912411Z go: downloading github.com/beorn7/perks v1.0.1
+2025-11-16T22:13:15.2043620Z go: downloading github.com/cespare/xxhash/v2 v2.3.0
+2025-11-16T22:13:15.2044366Z go: downloading github.com/prometheus/common v0.32.1
+2025-11-16T22:13:15.2348843Z go: downloading github.com/prometheus/procfs v0.7.3
+2025-11-16T22:13:15.2352497Z go: downloading google.golang.org/protobuf v1.36.5
+2025-11-16T22:13:15.2962853Z go: downloading github.com/hashicorp/golang-lru/v2 v2.0.7
+2025-11-16T22:13:15.3003867Z go: downloading go.uber.org/atomic v1.7.0
+2025-11-16T22:13:15.3053436Z go: downloading go.uber.org/multierr v1.6.0
+2025-11-16T22:13:15.5603474Z go: downloading github.com/mattn/go-runewidth v0.0.16
+2025-11-16T22:13:15.5723325Z go: downloading github.com/matttproud/golang_protobuf_extensions v1.0.1
+2025-11-16T22:13:15.5913385Z go: downloading github.com/rivo/uniseg v0.4.7
+2025-11-16T22:14:03.0733630Z ##[group]Run golangci-lint run ./...
+2025-11-16T22:14:03.0733965Z [36;1mgolangci-lint run ./...[0m
+2025-11-16T22:14:03.0768074Z shell: /usr/bin/bash -e {0}
+2025-11-16T22:14:03.0768328Z ##[endgroup]
+2025-11-16T22:14:25.8996375Z Post job cleanup.
+2025-11-16T22:14:26.0575773Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOMODCACHE
+2025-11-16T22:14:26.0616283Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOCACHE
+2025-11-16T22:14:26.0642913Z /home/runner/go/pkg/mod
+2025-11-16T22:14:26.0668226Z /home/runner/.cache/go-build
+2025-11-16T22:14:26.0673751Z Cache hit occurred on the primary key setup-go-Linux-ubuntu24-go-1.25.4-f29ddaca9537bce9aec78f57870d454f50be8129b3a8065be40c9628befd3878, not saving cache.
+2025-11-16T22:14:26.0840440Z Post job cleanup.
+2025-11-16T22:14:26.1821088Z [command]/usr/bin/git version
+2025-11-16T22:14:26.1859832Z git version 2.51.2
+2025-11-16T22:14:26.1905370Z Temporarily overriding HOME='/home/runner/work/_temp/763c4f79-cc13-4f97-94e5-cd282eb5db17' before making global git config changes
+2025-11-16T22:14:26.1906710Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-16T22:14:26.1919640Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secure-lab/secure-lab
+2025-11-16T22:14:26.1957429Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-16T22:14:26.1993443Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-16T22:14:26.2251990Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-16T22:14:26.2277546Z http.https://github.com/.extraheader
+2025-11-16T22:14:26.2291872Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-16T22:14:26.2329525Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-16T22:14:26.2698646Z Cleaning up orphan processes

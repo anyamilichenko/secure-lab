@@ -1,0 +1,203 @@
+﻿2025-11-16T22:13:02.1616771Z Current runner version: '2.329.0'
+2025-11-16T22:13:02.1642008Z ##[group]Runner Image Provisioner
+2025-11-16T22:13:02.1642780Z Hosted Compute Agent
+2025-11-16T22:13:02.1643321Z Version: 20251016.436
+2025-11-16T22:13:02.1643951Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-16T22:13:02.1644669Z Build Date: 2025-10-15T20:44:12Z
+2025-11-16T22:13:02.1645232Z ##[endgroup]
+2025-11-16T22:13:02.1645825Z ##[group]Operating System
+2025-11-16T22:13:02.1646396Z Ubuntu
+2025-11-16T22:13:02.1646835Z 24.04.3
+2025-11-16T22:13:02.1647353Z LTS
+2025-11-16T22:13:02.1647797Z ##[endgroup]
+2025-11-16T22:13:02.1648320Z ##[group]Runner Image
+2025-11-16T22:13:02.1648827Z Image: ubuntu-24.04
+2025-11-16T22:13:02.1649571Z Version: 20251112.124.1
+2025-11-16T22:13:02.1650600Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-16T22:13:02.1652279Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-16T22:13:02.1653274Z ##[endgroup]
+2025-11-16T22:13:02.1654409Z ##[group]GITHUB_TOKEN Permissions
+2025-11-16T22:13:02.1656459Z Contents: read
+2025-11-16T22:13:02.1656948Z Metadata: read
+2025-11-16T22:13:02.1657572Z Packages: read
+2025-11-16T22:13:02.1658100Z ##[endgroup]
+2025-11-16T22:13:02.1660716Z Secret source: Actions
+2025-11-16T22:13:02.1661508Z Prepare workflow directory
+2025-11-16T22:13:02.1975726Z Prepare all required actions
+2025-11-16T22:13:02.2013326Z Getting action download info
+2025-11-16T22:13:02.4857293Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-11-16T22:13:02.6102155Z Download action repository 'actions/setup-go@v4' (SHA:19bb51245e9c80abacb2e91cc42b33fa478b8639)
+2025-11-16T22:13:02.9176489Z Complete job name: Run Tests
+2025-11-16T22:13:02.9895151Z ##[group]Run actions/checkout@v4
+2025-11-16T22:13:02.9895970Z with:
+2025-11-16T22:13:02.9896374Z   repository: anyamilichenko/secure-lab
+2025-11-16T22:13:02.9897028Z   token: ***
+2025-11-16T22:13:02.9897419Z   ssh-strict: true
+2025-11-16T22:13:02.9897801Z   ssh-user: git
+2025-11-16T22:13:02.9898204Z   persist-credentials: true
+2025-11-16T22:13:02.9898645Z   clean: true
+2025-11-16T22:13:02.9899046Z   sparse-checkout-cone-mode: true
+2025-11-16T22:13:02.9899695Z   fetch-depth: 1
+2025-11-16T22:13:02.9900080Z   fetch-tags: false
+2025-11-16T22:13:02.9900469Z   show-progress: true
+2025-11-16T22:13:02.9900859Z   lfs: false
+2025-11-16T22:13:02.9901215Z   submodules: false
+2025-11-16T22:13:02.9901609Z   set-safe-directory: true
+2025-11-16T22:13:02.9902289Z ##[endgroup]
+2025-11-16T22:13:03.0954220Z Syncing repository: anyamilichenko/secure-lab
+2025-11-16T22:13:03.0955897Z ##[group]Getting Git version info
+2025-11-16T22:13:03.0956654Z Working directory is '/home/runner/work/secure-lab/secure-lab'
+2025-11-16T22:13:03.0957585Z [command]/usr/bin/git version
+2025-11-16T22:13:03.1060469Z git version 2.51.2
+2025-11-16T22:13:03.1086586Z ##[endgroup]
+2025-11-16T22:13:03.1100537Z Temporarily overriding HOME='/home/runner/work/_temp/26b6b78b-cf28-4592-94fd-4b6196212a75' before making global git config changes
+2025-11-16T22:13:03.1101890Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-16T22:13:03.1113177Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secure-lab/secure-lab
+2025-11-16T22:13:03.1150357Z Deleting the contents of '/home/runner/work/secure-lab/secure-lab'
+2025-11-16T22:13:03.1153897Z ##[group]Initializing the repository
+2025-11-16T22:13:03.1157665Z [command]/usr/bin/git init /home/runner/work/secure-lab/secure-lab
+2025-11-16T22:13:03.1287167Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-16T22:13:03.1288287Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-16T22:13:03.1289302Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-16T22:13:03.1289968Z hint:
+2025-11-16T22:13:03.1290558Z hint: 	git config --global init.defaultBranch <name>
+2025-11-16T22:13:03.1291393Z hint:
+2025-11-16T22:13:03.1291916Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-16T22:13:03.1292800Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-16T22:13:03.1293776Z hint:
+2025-11-16T22:13:03.1294363Z hint: 	git branch -m <name>
+2025-11-16T22:13:03.1294880Z hint:
+2025-11-16T22:13:03.1295449Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-16T22:13:03.1296436Z Initialized empty Git repository in /home/runner/work/secure-lab/secure-lab/.git/
+2025-11-16T22:13:03.1304911Z [command]/usr/bin/git remote add origin https://github.com/anyamilichenko/secure-lab
+2025-11-16T22:13:03.1345326Z ##[endgroup]
+2025-11-16T22:13:03.1346242Z ##[group]Disabling automatic garbage collection
+2025-11-16T22:13:03.1351240Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-16T22:13:03.1384415Z ##[endgroup]
+2025-11-16T22:13:03.1385065Z ##[group]Setting up auth
+2025-11-16T22:13:03.1395504Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-16T22:13:03.1430702Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-16T22:13:03.1817494Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-16T22:13:03.1857054Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-16T22:13:03.2095967Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-16T22:13:03.2142300Z ##[endgroup]
+2025-11-16T22:13:03.2143568Z ##[group]Fetching the repository
+2025-11-16T22:13:03.2152216Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5da5971ac4bd535a618c6146f553f25ac2e5d1a5:refs/remotes/origin/master
+2025-11-16T22:13:03.3680111Z From https://github.com/anyamilichenko/secure-lab
+2025-11-16T22:13:03.3680952Z  * [new ref]         5da5971ac4bd535a618c6146f553f25ac2e5d1a5 -> origin/master
+2025-11-16T22:13:03.3712335Z ##[endgroup]
+2025-11-16T22:13:03.3713511Z ##[group]Determining the checkout info
+2025-11-16T22:13:03.3714943Z ##[endgroup]
+2025-11-16T22:13:03.3720554Z [command]/usr/bin/git sparse-checkout disable
+2025-11-16T22:13:03.3760854Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-16T22:13:03.3787849Z ##[group]Checking out the ref
+2025-11-16T22:13:03.3792514Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-11-16T22:13:03.3845131Z Reset branch 'master'
+2025-11-16T22:13:03.3847694Z branch 'master' set up to track 'origin/master'.
+2025-11-16T22:13:03.3853001Z ##[endgroup]
+2025-11-16T22:13:03.3887001Z [command]/usr/bin/git log -1 --format=%H
+2025-11-16T22:13:03.3908432Z 5da5971ac4bd535a618c6146f553f25ac2e5d1a5
+2025-11-16T22:13:03.4128621Z ##[group]Run actions/setup-go@v4
+2025-11-16T22:13:03.4129309Z with:
+2025-11-16T22:13:03.4129755Z   go-version: 1.25
+2025-11-16T22:13:03.4130126Z   cache: true
+2025-11-16T22:13:03.4130511Z   cache-dependency-path: go.sum
+2025-11-16T22:13:03.4130966Z   check-latest: false
+2025-11-16T22:13:03.4131507Z   token: ***
+2025-11-16T22:13:03.4131863Z ##[endgroup]
+2025-11-16T22:13:03.5654333Z Setup go version spec 1.25
+2025-11-16T22:13:03.5765083Z Found in cache @ /opt/hostedtoolcache/go/1.25.4/x64
+2025-11-16T22:13:03.5765760Z Added go to the path
+2025-11-16T22:13:03.5766257Z Successfully set up Go version 1.25
+2025-11-16T22:13:03.6471272Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOMODCACHE
+2025-11-16T22:13:03.6502196Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOCACHE
+2025-11-16T22:13:03.6524615Z /home/runner/go/pkg/mod
+2025-11-16T22:13:03.6555275Z /home/runner/.cache/go-build
+2025-11-16T22:13:03.7731274Z Cache hit for: setup-go-Linux-ubuntu24-go-1.25.4-f29ddaca9537bce9aec78f57870d454f50be8129b3a8065be40c9628befd3878
+2025-11-16T22:13:04.2240022Z Received 66408527 of 66408527 (100.0%), 168.4 MBs/sec
+2025-11-16T22:13:04.2241007Z Cache Size: ~63 MB (66408527 B)
+2025-11-16T22:13:04.2267248Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2a13dc08-95a3-45f2-874b-b75da2525096/cache.tzst -P -C /home/runner/work/secure-lab/secure-lab --use-compress-program unzstd
+2025-11-16T22:13:04.9712323Z Cache restored successfully
+2025-11-16T22:13:04.9846672Z Cache restored from key: setup-go-Linux-ubuntu24-go-1.25.4-f29ddaca9537bce9aec78f57870d454f50be8129b3a8065be40c9628befd3878
+2025-11-16T22:13:04.9868855Z go version go1.25.4 linux/amd64
+2025-11-16T22:13:04.9869361Z 
+2025-11-16T22:13:04.9869856Z ##[group]go env
+2025-11-16T22:13:05.0007696Z AR='ar'
+2025-11-16T22:13:05.0008204Z CC='gcc'
+2025-11-16T22:13:05.0008645Z CGO_CFLAGS='-O2 -g'
+2025-11-16T22:13:05.0009087Z CGO_CPPFLAGS=''
+2025-11-16T22:13:05.0009914Z CGO_CXXFLAGS='-O2 -g'
+2025-11-16T22:13:05.0010425Z CGO_ENABLED='1'
+2025-11-16T22:13:05.0010877Z CGO_FFLAGS='-O2 -g'
+2025-11-16T22:13:05.0011272Z CGO_LDFLAGS='-O2 -g'
+2025-11-16T22:13:05.0011663Z CXX='g++'
+2025-11-16T22:13:05.0012079Z GCCGO='gccgo'
+2025-11-16T22:13:05.0012448Z GO111MODULE=''
+2025-11-16T22:13:05.0012813Z GOAMD64='v1'
+2025-11-16T22:13:05.0013195Z GOARCH='amd64'
+2025-11-16T22:13:05.0013575Z GOAUTH='netrc'
+2025-11-16T22:13:05.0013949Z GOBIN=''
+2025-11-16T22:13:05.0014364Z GOCACHE='/home/runner/.cache/go-build'
+2025-11-16T22:13:05.0014858Z GOCACHEPROG=''
+2025-11-16T22:13:05.0015204Z GODEBUG=''
+2025-11-16T22:13:05.0015586Z GOENV='/home/runner/.config/go/env'
+2025-11-16T22:13:05.0016042Z GOEXE=''
+2025-11-16T22:13:05.0016416Z GOEXPERIMENT=''
+2025-11-16T22:13:05.0016781Z GOFIPS140='off'
+2025-11-16T22:13:05.0017135Z GOFLAGS=''
+2025-11-16T22:13:05.0018194Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build188048956=/tmp/go-build -gno-record-gcc-switches'
+2025-11-16T22:13:05.0019495Z GOHOSTARCH='amd64'
+2025-11-16T22:13:05.0019914Z GOHOSTOS='linux'
+2025-11-16T22:13:05.0020365Z GOINSECURE=''
+2025-11-16T22:13:05.0020876Z GOMOD='/home/runner/work/secure-lab/secure-lab/go.mod'
+2025-11-16T22:13:05.0021509Z GOMODCACHE='/home/runner/go/pkg/mod'
+2025-11-16T22:13:05.0021987Z GONOPROXY=''
+2025-11-16T22:13:05.0022373Z GONOSUMDB=''
+2025-11-16T22:13:05.0022748Z GOOS='linux'
+2025-11-16T22:13:05.0023287Z GOPATH='/home/runner/go'
+2025-11-16T22:13:05.0023902Z GOPRIVATE=''
+2025-11-16T22:13:05.0024453Z GOPROXY='https://proxy.golang.org,direct'
+2025-11-16T22:13:05.0025072Z GOROOT='/opt/hostedtoolcache/go/1.25.4/x64'
+2025-11-16T22:13:05.0025605Z GOSUMDB='sum.golang.org'
+2025-11-16T22:13:05.0026040Z GOTELEMETRY='local'
+2025-11-16T22:13:05.0026535Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2025-11-16T22:13:05.0027074Z GOTMPDIR=''
+2025-11-16T22:13:05.0027433Z GOTOOLCHAIN='auto'
+2025-11-16T22:13:05.0028000Z GOTOOLDIR='/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64'
+2025-11-16T22:13:05.0028625Z GOVCS=''
+2025-11-16T22:13:05.0029589Z GOVERSION='go1.25.4'
+2025-11-16T22:13:05.0030052Z GOWORK=''
+2025-11-16T22:13:05.0030509Z PKG_CONFIG='pkg-config'
+2025-11-16T22:13:05.0030817Z 
+2025-11-16T22:13:05.0031330Z ##[endgroup]
+2025-11-16T22:13:05.0178462Z ##[group]Run go mod download
+2025-11-16T22:13:05.0178829Z [36;1mgo mod download[0m
+2025-11-16T22:13:05.0217258Z shell: /usr/bin/bash -e {0}
+2025-11-16T22:13:05.0217570Z ##[endgroup]
+2025-11-16T22:13:05.0419407Z ##[group]Run go test -v ./...
+2025-11-16T22:13:05.0419802Z [36;1mgo test -v ./...[0m
+2025-11-16T22:13:05.0450874Z shell: /usr/bin/bash -e {0}
+2025-11-16T22:13:05.0451156Z ##[endgroup]
+2025-11-16T22:13:34.6810565Z ?   	secure-lab	[no test files]
+2025-11-16T22:13:34.6811150Z ?   	secure-lab/handlers	[no test files]
+2025-11-16T22:13:34.6811639Z ?   	secure-lab/middleware	[no test files]
+2025-11-16T22:13:34.6812256Z ?   	secure-lab/models	[no test files]
+2025-11-16T22:13:34.7787999Z Post job cleanup.
+2025-11-16T22:13:34.9348192Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOMODCACHE
+2025-11-16T22:13:34.9385334Z [command]/opt/hostedtoolcache/go/1.25.4/x64/bin/go env GOCACHE
+2025-11-16T22:13:34.9408977Z /home/runner/go/pkg/mod
+2025-11-16T22:13:34.9437855Z /home/runner/.cache/go-build
+2025-11-16T22:13:34.9443195Z Cache hit occurred on the primary key setup-go-Linux-ubuntu24-go-1.25.4-f29ddaca9537bce9aec78f57870d454f50be8129b3a8065be40c9628befd3878, not saving cache.
+2025-11-16T22:13:34.9570363Z Post job cleanup.
+2025-11-16T22:13:35.0507145Z [command]/usr/bin/git version
+2025-11-16T22:13:35.0542385Z git version 2.51.2
+2025-11-16T22:13:35.0584925Z Temporarily overriding HOME='/home/runner/work/_temp/45ed1d15-7577-435d-86ff-b35073c0141b' before making global git config changes
+2025-11-16T22:13:35.0586071Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-16T22:13:35.0590506Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secure-lab/secure-lab
+2025-11-16T22:13:35.0624885Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-16T22:13:35.0656110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-16T22:13:35.0894318Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-16T22:13:35.0917068Z http.https://github.com/.extraheader
+2025-11-16T22:13:35.0930519Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-16T22:13:35.0963925Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-16T22:13:35.1325662Z Cleaning up orphan processes
