@@ -10,7 +10,7 @@ import (
 	"secure-lab/models"
 )
 
-// Секретный ключ для подписи JWT (в реальном приложении храните в безопасном месте)
+// Секретный ключ для подписи JWT, в реальном приложении мы бы хранили его в безопасном месте
 var jwtKey = []byte("my_secret_key")
 
 // LoginRequest структура для входа
@@ -29,13 +29,13 @@ type Claims struct {
 func Login(c *gin.Context) {
 	var loginReq LoginRequest
 
-	// Получаем данные из запроса
+	//Получаем данные из запроса
 	if err := c.ShouldBindJSON(&loginReq); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Неверный формат данных"})
 		return
 	}
 
-	// Ищем пользователя (в реальном приложении - в базе данных)
+	//Ищем пользователя, в реальном приложении это была бы база данных
 	var user models.User
 	found := false
 	for _, u := range models.Users {
@@ -51,14 +51,14 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// Проверяем пароль
+	//Проверяем пароль
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(loginReq.Password))
 	if err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Неверный пароль"})
 		return
 	}
 
-	// Создаем JWT токен
+	//Создаем JWT токен
 	expirationTime := time.Now().Add(24 * time.Hour)
 	claims := &Claims{
 		Username: loginReq.Username,
@@ -74,7 +74,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// Возвращаем токен
+	//Возвращаем токен
 	c.JSON(http.StatusOK, gin.H{
 		"token":   tokenString,
 		"expires": expirationTime,

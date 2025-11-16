@@ -35,7 +35,7 @@ func AddData(c *gin.Context) {
 		return
 	}
 
-	// ЗАЩИТА ОТ XSS: экранируем HTML-символы
+	//ЗАЩИТА ОТ XSS: экранируем HTML-символы
 	escapedData := html.EscapeString(request.Data)
 
 	c.JSON(http.StatusOK, gin.H{

@@ -49,7 +49,6 @@ func AuthMiddleware() gin.HandlerFunc {
 	}
 }
 
-// Claims структура для JWT
 type Claims struct {
 	Username string `json:"username"`
 	jwt.StandardClaims

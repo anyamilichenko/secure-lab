@@ -1,6 +1,5 @@
 package models
 
-// User представляет структуру пользователя
 type User struct {
 	ID       int    `json:"id"`
 	Username string `json:"username"`
@@ -9,7 +8,6 @@ type User struct {
 	FullName string `json:"full_name"`
 }
 
-// Для простоты будем хранить пользователей в памяти
 var Users = []User{
 	{
 		ID:       1,

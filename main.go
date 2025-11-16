@@ -12,14 +12,13 @@ import (
 )
 
 func main() {
-	// Хешируем пароль для тестового пользователя
+	//Хешируем пароль для тестового пользователя
 	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte("admin123"), bcrypt.DefaultCost)
 	models.Users[0].Password = string(hashedPassword)
 
-	// Создаем роутер
+	//Создаем роутер
 	router := gin.Default()
 
-	// Маршруты
 	// 1. Аутентификация
 	router.POST("/auth/login", handlers.Login)
 
@@ -27,8 +26,8 @@ func main() {
 	api := router.Group("/api")
 	api.Use(middleware.AuthMiddleware())
 	{
-		api.GET("/data", handlers.GetData)  // Получить данные
-		api.POST("/data", handlers.AddData) // Добавить данные
+		api.GET("/data", handlers.GetData)
+		api.POST("/data", handlers.AddData)
 	}
 
 	// 3. Публичный маршрут
@@ -41,5 +40,7 @@ func main() {
 
 	// Запускаем сервер
 	log.Println("Сервер запущен на http://localhost:8080")
-	router.Run(":8080")
+	if err := router.Run(":8080"); err != nil {
+		log.Fatalf("Ошибка при запуске сервера: %v", err)
+	}
 }
