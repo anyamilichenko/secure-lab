@@ -1,0 +1,38 @@
+=== Symbol Results ===
+
+Vulnerability #1: GO-2025-3553
+    Excessive memory allocation during header parsing in
+    github.com/golang-jwt/jwt
+  More info: https://pkg.go.dev/vuln/GO-2025-3553
+  Module: github.com/golang-jwt/jwt
+    Found in: github.com/golang-jwt/jwt@v3.2.2+incompatible
+    Fixed in: N/A
+    Example traces found:
+      #1: for function github.com/golang-jwt/jwt.NewWithClaims
+        Login @ secure-lab/handlers/auth.go:70:28
+        NewWithClaims @ github.com/golang-jwt/jwt/token.go:37:6
+      #2: for function github.com/golang-jwt/jwt.ParseWithClaims
+        main @ secure-lab/main.go:43:22
+        Engine.Run @ github.com/gin-gonic/gin/gin.go:540:27
+        ListenAndServe @ stdlib/src/net/http/server.go:3704:30
+        Server.ListenAndServe @ stdlib/src/net/http/server.go:3389:16
+        Server.Serve @ stdlib/src/net/http/server.go:3493:3
+        conn.serve @ stdlib/src/net/http/server.go:2109:36
+        serverHandler.ServeHTTP @ stdlib/src/net/http/server.go:3340:19
+        Engine.ServeHTTP @ github.com/gin-gonic/gin/gin.go:643:26
+        Engine.handleHTTPRequest @ github.com/gin-gonic/gin/gin.go:689:10
+        Context.Next @ github.com/gin-gonic/gin/context.go:192:23
+        AuthMiddleware @ secure-lab/middleware/auth.go:36:36
+        ParseWithClaims @ github.com/golang-jwt/jwt/token.go:92:6
+      #3: for function github.com/golang-jwt/jwt.Token.SignedString
+        Login @ secure-lab/handlers/auth.go:71:40
+        Token.SignedString @ github.com/golang-jwt/jwt/token.go:49:17
+      #4: for function github.com/golang-jwt/jwt.init
+        init @ secure-lab/middleware/auth.go:8:2
+        init @ github.com/golang-jwt/jwt/claims.go:1:1
+
+Your code is affected by 1 vulnerability from 1 module.
+This scan also found 1 vulnerability in packages you import and 0
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.
+Use '-show verbose' for more details.
