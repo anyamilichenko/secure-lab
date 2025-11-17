@@ -92,7 +92,7 @@ jobs:
         uses: dependency-check/Dependency-Check_Action@main
         with:
           project: 'go-project'
-          path: '.'
+          path: '.,**/go.mod,**/go.sum'
           format: 'HTML'
           args: >
             --scan . 
